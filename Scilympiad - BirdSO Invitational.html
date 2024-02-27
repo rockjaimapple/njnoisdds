@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Scilympiad, Science Olympiad">
+    <meta name="description" content="Scilympiad is a tournament and scoring management system, specifically designed for Science Olympiad tournaments to manage registration, payment, event signup, test creation, online test taking, etc.">
+    <title>Scilympiad - BirdSO Invitational</title>
+    <link href="/Content/css?v=Yv8lur5kamThl65WdFtYYGEDUvOJ-jY95s6Xezjl7iY1" rel="stylesheet"/>
+
+    <script src="/bundles/modernizr?v=wBEWDufH_8Md-Pbioxomt90vm6tJN2Pyy9u9zHtWsPo1"></script>
+
+    <script src="/bundles/jquery?v=v76fAns59-4kGkYyDyEXyw9RgnmvJyXSd0eFBt05RzE1"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/momentjs/2.14.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css">
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+                    <a class="navbar-brand" href="https://scilympiad.com/birdso">BirdSO Invitational</a>
+        </div>
+        <div class="navbar-collapse collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <li><a href='/birdso/Support'>Support</a></li>
+                <li><a href='/birdso/Student/StudentDB'>Student Login</a></li>
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Coaches<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href='/birdso/ForHcs/HcDB'>Head Coach Dashboard</a></li>
+                            <li class="divider"></li>
+                            <li><a href='/birdso/Reg'>School/Teams Registration</a></li>
+                            <li><a href="/birdso/QnAs/doc/Agenda">Workshop</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Tournament<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href='/birdso/Info/Tournaments'>Tournaments</a></li>
+                            <li><a href="/birdso/QnAs/doc/tournament-updates">Tournament updates</a></li>
+                            <li><a href='/birdso/Info/TourResults'>Tournament Results</a></li>
+                            <li class="divider"></li>
+                            <li><a href='/birdso/Map/VenueMaps'>Tournament Maps</a></li>
+							
+                        </ul>
+                    </li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Volunteer<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href='/birdso/Volunteer/VolOps'>Volunteer Opportunities</a></li>
+							<li class="divider"></li>
+							<li><a href="/birdso/Volunteer/Doc/event-supervisor-signup">Event Supervisor Signup</a></li>
+							<li class="divider"></li>
+							<li><a href='/birdso/Volunteer/MealPlans'>Meal Order Form</a></li>
+						</ul>
+                    </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Resources<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://www.soinc.org" target="_blank">National Science Olympiad</a></li>
+                        <li><a href="https://www.soinc.org/join/policies" target="_blank">Policies</a></li>
+                        <li><a href="http://scioly.org" target="_blank">Scioly.org Student Center</a></li>
+                        <li><a href="https://scioly.org/chat.php?r=scilympiad" target="_blank">Scioly.org Discord</a></li>
+                        <li><a href="https://groups.google.com/forum/#!forum/scienceolympiadcoaches" target="_blank">Coaches’ Google Group</a></li>
+                            <li><a href="/birdso/Pscore">Device Event Scoring</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/birdso/Docs/UsefulDocs">Tournament documents</a></li>
+                    </ul>
+                </li>
+    <li><a href="/birdso/Account/Login" id="loginLink">Log in</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+    <div class="container">
+        
+
+<script>
+    function GetAnsCount(plid, ptid) {
+        $.ajax(
+        {
+                url: '/birdso/TakeTest/AnswerCount',
+                contentType: 'application/json',
+                type: "GET",
+                dataType: "JSON",
+                data: { lid: plid, tid: ptid },
+                success: function (acnt) { alert("Answers saved: " + acnt); }
+        });
+    }
+</script>
+<div class="content">
+    <h4 class="text-warning text-center"><strong>Your Assigned Events/Tests - Team #: B012</strong></h4>
+    <p>
+        <span class="text-danger"><b>Important: Test Start and End Time are in tournament's time zone (PST), NOT necessarily your time zone</b>.</span> Listed are your assigned events.
+        If you don't see your expected events, make sure you're in the right tournament See <b>All my tournaments</b> below. 
+        The first column shows all your assigned events. If the online test for an event is published, the remaining columns will be filled, and the event name becomes a hyperlink which
+        you can click to view instructions and take the test. If the test is not published, the remaining columns are blank.
+        Your test will not start until you click on the <b>Start</b> button in the next page.
+    </p>
+    <table class='table table-bordered table-condensed'>
+        <thead style='background-color:orange;color:white;'><tr><th>Event Name</th><th>Time Limit</th><th>Test Start Time</th><th>Test End Time</th><th>Status</th><th>Answers Saved</th></tr></thead>
+        <tbody>
+                    <tr>
+                        <td>
+                            Disease Detectives
+                        </td>
+                        <td>50 minutes</td><td>02/10/24 05:00 AM</td><td>02/17/24 06:00 PM</td>
+                            <td>Test Submitted</td>
+                        <td><a href='javascript:GetAnsCount("1048H4", "000EBE");'>Count</a></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Experimental Design
+                        </td>
+                        <td>50 minutes</td><td>02/10/24 05:00 AM</td><td>02/17/24 06:00 PM</td>
+                            <td>Time's up</td>
+                        <td><a href='javascript:GetAnsCount("1048H4", "000ECU");'>Count</a></td>
+                    </tr>
+        </tbody>
+    </table>
+    <br />
+    <p class="text-center"><a href='/birdso/TakeTest/MyTours?sid=100506282850524282' class="btn btn-primary">All my tournaments</a></p>
+    <br />
+    <p class="text-danger text-center">There are some known connectivity issues with Safari, Chromebooks and school-furnished computers. Answers will not be synchronized among partners. Use Chrome, Edge or Firefox instead.</p>
+    <hr />
+    <h4 class="text-warning text-center">Results/Graded Tests</h4>
+    <p class="text-center">Typically invitationals will release team results, answer keys and graded tests. However, States and Regionals generally do not release these. You will see a link below for results and graded tests if this tournament releases them and they are ready.</p>
+            <p class="text-center"><a href='/birdso/TakeTest/GradedTests?lid=1048H4' class="btn btn-success btn-lg">Graded Tests</a></p>
+</div>
+
+        
+        <hr />
+        <div class="row">
+    
+    <div class="col-md-6 text-left"><a href="https://scilympiad.com" target="_blank">&copy; 2024 - powered by Scilympiad</a> | <a href='/birdso/Home/Subscribers?sort=t' target="_blank">Tournaments</a> | <a href='/birdso/Give'>Support Us</a></div>
+    <div class="col-md-6 text-right">
+        <a href='/ToS.html' target="_blank">Terms of Use</a> | <a href='/Privacy.html' target="_blank">Privacy</a> | <a href='/CookiePolicy.html' target="_blank">Cookie Policy</a> | <a href='/birdso/Support' target="_blank">Support</a> | <a href="/birdso/Home/Contact">Contact</a>
+    </div>
+</div>
+
+    </div>
+    
+    <script src="/bundles/bootstrap?v=2Fz3B0iizV2NnnamQFrx-NbYJNTFeBJ2GM05SilbtQU1"></script>
+
+    
+</body>
+</html>
