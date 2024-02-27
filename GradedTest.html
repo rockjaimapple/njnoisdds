@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Science Olympiad, Scilympiad is a tournament and scoring management system, specifically designed for Science Olympiad tournaments to manage registration, payment, event signup, test creation, online test taking, etc.">
+    <link href="/Content/css?v=Yv8lur5kamThl65WdFtYYGEDUvOJ-jY95s6Xezjl7iY1" rel="stylesheet"/>
+
+    <script src="/bundles/modernizr?v=wBEWDufH_8Md-Pbioxomt90vm6tJN2Pyy9u9zHtWsPo1"></script>
+
+    <script>
+        MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <link rel="stylesheet" href="/DXR.axd?r=1_209,0_2198,1_67,1_68,1_69,1_208,0_2203,0_2210,0_2305,0_2214,0_2310,1_83-t6Uvr" />
+    <script src="/bundles/jquery?v=v76fAns59-4kGkYyDyEXyw9RgnmvJyXSd0eFBt05RzE1"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script id="dxis_745101747" src="/DXR.axd?r=1_11,1_251,1_63,1_12,1_13,1_14,1_15,1_16,1_20,1_182,1_183,17_0,1_23,1_181,17_23,1_19,1_212,1_223,1_224,1_211,1_217,1_215,1_218,1_21,1_22,1_219,1_216,1_220,1_213,1_221,1_222,1_210,1_226,1_235,1_237,1_238,1_225,1_230,1_231,1_232,1_214,1_227,1_228,1_229,1_233,1_234,1_236,1_239,17_48,17_49,17_2,1_17,1_24,1_33,1_34,1_39,1_41,17_11,17_8,1_189,1_249,17_1-s6Uvr"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+                    <a class="navbar-brand" href="https://scilympiad.com/birdso">BirdSO Invitational</a>
+        </div>
+        <div class="navbar-collapse collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <li><a href='/birdso/Support'>Support</a></li>
+                <li><a href='/birdso/Student/StudentDB'>Student Login</a></li>
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Coaches<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href='/birdso/ForHcs/HcDB'>Head Coach Dashboard</a></li>
+                            <li class="divider"></li>
+                            <li><a href='/birdso/Reg'>School/Teams Registration</a></li>
+                            <li><a href="/birdso/QnAs/doc/Agenda">Workshop</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Tournament<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href='/birdso/Info/Tournaments'>Tournaments</a></li>
+                            <li><a href="/birdso/QnAs/doc/tournament-updates">Tournament updates</a></li>
+                            <li><a href='/birdso/Info/TourResults'>Tournament Results</a></li>
+                            <li class="divider"></li>
+                            <li><a href='/birdso/Map/VenueMaps'>Tournament Maps</a></li>
+							
+                        </ul>
+                    </li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Volunteer<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href='/birdso/Volunteer/VolOps'>Volunteer Opportunities</a></li>
+							<li class="divider"></li>
+							<li><a href="/birdso/Volunteer/Doc/event-supervisor-signup">Event Supervisor Signup</a></li>
+							<li class="divider"></li>
+							<li><a href='/birdso/Volunteer/MealPlans'>Meal Order Form</a></li>
+						</ul>
+                    </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Resources<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://www.soinc.org" target="_blank">National Science Olympiad</a></li>
+                        <li><a href="https://www.soinc.org/join/policies" target="_blank">Policies</a></li>
+                        <li><a href="http://scioly.org" target="_blank">Scioly.org Student Center</a></li>
+                        <li><a href="https://scioly.org/chat.php?r=scilympiad" target="_blank">Scioly.org Discord</a></li>
+                        <li><a href="https://groups.google.com/forum/#!forum/scienceolympiadcoaches" target="_blank">Coaches’ Google Group</a></li>
+                            <li><a href="/birdso/Pscore">Device Event Scoring</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/birdso/Docs/UsefulDocs">Tournament documents</a></li>
+                    </ul>
+                </li>
+    <li><a href="/birdso/Account/Login" id="loginLink">Log in</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+    <div class="container">
+        
+<style>
+    table input { border: 0; outline: 0; width: 15px; font-size: 0.9em; }
+    table input:focus { outline: none !important; }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div style="width: 1200px; margin: auto; padding: 20px; background-color: white;" class="form-horizontal">
+    <h5 class="text-center"><strong>Team #: B013 - Score: (127.00 out of 132.00) - Experimental Design - Experimental Design B</strong> (Note: Some scores might have been adjusted by Grader)</h5>
+    <hr />
+    <i class="fa fa-star text-success" aria-hidden="true"></i> full credit, &nbsp; <i class="fa fa-star-half-o text-success" aria-hidden="true"></i> partial credit, &nbsp;
+    <span class='glyphicon glyphicon-unchecked text-danger'></span> skipped, &nbsp; <span class='glyphicon glyphicon-remove text-danger'></span> Incorrect answer (no credit)
+    <hr />
+    <div><p><span style="font-size: 18px;"><br></span></p><p><span style="font-size: 18px;">Waves are an important topic of scientific study due to its many applications in the world around us.</span></p><p><span style="font-size: 24px;">Conduct an experiment focused on exploring </span><span style="font-size: 24px;"><u style="font-weight: bold;">wave properties</u>.</span></p><p><span style="font-size: 14px;">You are allowed to click out of the Scilympiad tab in order to use the linked submission form during the duration of the event.</span></p><p><span style="font-size: 14px;">﻿Materials:</span></p><ul><li><span style="font-size: 14px;">Water (faucet), unlimited quantity</span></li><li><span style="font-size: 14px;">Big tub, ideally more long/wide than tall. The 3 foot string has to be longer than the longest diagonal of the tub.</span></li><li><span style="font-size: 14px;">3 feet of string (any type)</span></li><li><span style="font-size: 14px;">2 feet of tape (any type)</span></li><li><span style="font-size: 14px;">2 types of paper (notebook, copy, construction, cardstock, etc)</span></li><li><span style="font-size: 14px;">10 Straws, coffee stirrers, popsicle sticks OR "stick equivalents"</span></li><li><span style="font-size: 14px;">6 in (length) x (18 inches - normal size, height) aluminum/tin foil</span></li><li><span style="font-size: 14px;">Flashlight (phone may work)</span></li><li><span style="font-size: 14px;">8 coins (of any type) OR washers</span></li><li><span style="font-size: 14px;">Scissors<br></span><span style="font-size: 24px;"><br></span></li></ul></div>
+    <hr />
+        <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div>
+                            <div style="width:110px;float:left;"><b>1. (0.00 pts)</b></div><div style="float:left;"><p>I acknowledge that naming all file submissions / including in the contents of my file submissions <b>my team number</b> will grant me 1 bonus point.</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+                <div class="panel-body">
+                            <div><div style="width:50px;float:left;"><input checked="checked" id="Ques1" name="Ques1" type="radio" value="1" /> &nbsp; A)</div><div style="float:left;"><p>Yes</p></div></div>
+                            <div style="clear:both;"></div>
+                            <div><div style="width:50px;float:left;"><input id="Ques1" name="Ques1" type="radio" value="2" /> &nbsp; B)</div><div style="float:left;"><p>No</p></div></div>
+                            <div style="clear:both;"></div>
+                        <span class="text-warning"><span class='glyphicon glyphicon-remove text-danger'></span> &nbsp; Correct answer: A &nbsp; &nbsp; &nbsp; Awarded points: 0.00</span>
+                </div>
+        </div>
+        <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div>
+                            <div style="width:110px;float:left;"><b>2. (2.00 pts)</b></div><div style="float:left;"><p>Statement of the Problem</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+                <div class="panel-body">
+                        <div><b>Your Answer: </b><br />How does the height at which the string is lifted affect the time that the wave that forms touches the wall?</div>
+                        <div class="text-warning"><b>Expected Answer: </b><br /></div>
+                        <br /><span class="text-warning"><span class='glyphicon glyphicon-check text-success'></span> &nbsp; Awarded points: 2.00<br /></span>
+                </div>
+        </div>
+        <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div>
+                            <div style="width:110px;float:left;"><b>3. (6.00 pts)</b></div><div style="float:left;"><p>Hypothesis</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+                <div class="panel-body">
+                        <div><b>Your Answer: </b><br /><p>If you increase the height of the string (2, 4, 6 cm), then the time taken for the wave (in seconds) to touch the wall will decrease. This is because when the string is lifted higher and higher, gravity will act on the wave with more force. When height increases, the gravitational potential energy increases and it will travel down the string faster.</p></div>
+                        <div class="text-warning"><b>Expected Answer: </b><br /></div>
+                        <br /><span class="text-warning"><span class='glyphicon glyphicon-check text-success'></span> &nbsp; Awarded points: 6.00<br /></span>
+                </div>
+        </div>
+        <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div>
+                            <div style="width:250px;float:left;"><b>4. (17.00 pts, <span style="background-color: lightyellow; color:green;">Tiebreaker order: 3</span></b>)</div><div style="float:left;"><p>Variables</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+                <div class="panel-body">
+                        <div><b>Your Answer: </b><br /><p>Independent Variable: The height that one end of the string is lifted to (2, 4, 6 cm)</p><p>Dependent Variable: The time that the formed wave on the string takes to touch the wall (in seconds).</p><p>Controlled Variable: Length of string (3 feet), the material of string (cotton), the speed that it takes to lift the string to the designated point (1 second)</p><p>Constant Variable: Constant of gravity,</p><p><br></p></div>
+                        <div class="text-warning"><b>Expected Answer: </b><br /></div>
+                        <br /><span class="text-warning"><span class='glyphicon glyphicon-check text-success'></span> &nbsp; Awarded points: 17.00<br /></span>
+                </div>
+        </div>
+        <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div>
+                            <div style="width:110px;float:left;"><b>5. (4.00 pts)</b></div><div style="float:left;"><p>Materials</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+                <div class="panel-body">
+                        <div><b>Your Answer: </b><br /><p>1. 3 feet of string</p><p>2. One meter stick</p><p>3. One stopwatch</p><p>4. One Stopwatch</p><p>5. 1 foot of tape</p></div>
+                        <div class="text-warning"><b>Expected Answer: </b><br /></div>
+                        <br /><span class="text-warning"><span class='glyphicon glyphicon-check text-success'></span> &nbsp; Awarded points: 4.00<br /></span>
+                </div>
+        </div>
+        <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div>
+                            <div style="width:250px;float:left;"><b>6. (14.00 pts, <span style="background-color: lightyellow; color:green;">Tiebreaker order: 2</span></b>)</div><div style="float:left;"><p>Procedure and Set-up Diagrams</p><p><a href="https://forms.gle/4ibMgGx9emcngZ696" target="_blank">Link to the form</a> for diagram submissions</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+                <div class="panel-body">
+                        <div><b>Your Answer: </b><br /><p>1. gather all materials<br>2. strech out 3 feet of string into a stright line, but without any tension on it.<br>3. secure one end of the string to a wall using tape<br>4. set the other end at exactly 10 cm on the meter stick<br>5. move the other end of the string to 12 inches on the meter stick</p><p>6. quickly pull down the string to the 10 cm mark</p><p>7. start the stopwatch while doing so<br>8. stop the stopwatch when the wave formed touches the wall</p><p>9. record the time in seconds</p><p>10. repeat steps 4-9 2 more times for the other 2 trials<br>11. set the end of the string at 10 cm&nbsp;<br>12. move that end of the string to 14 cm mark on the meter stick</p><p>13. quickly pull down the string to the 10 cm mark and start the timer<br>14. stop timer when the wave touches the wall<br>15. record data&nbsp;<br>16. repeat steps 11-15 2 more times for the other 2 trials<br>17. set the end of the string at 10 cm&nbsp;<br>18. move that end of the string to the 16 cm mark on the meter stick<br>19. quickly pull down the string to the 10 cm mark and start the timer<br>20. strop the timer when the wave touches the wall<br>21. record data<br>22. repeat step 17-21 2 more times for the other 2 trials<br>23. clean up workspace</p><p><br></p></div>
+                        <div class="text-warning"><b>Expected Answer: </b><br /></div>
+                        <br /><span class="text-warning"><span class='glyphicon glyphicon-check text-success'></span> &nbsp; Awarded points: 14.00<br /></span>
+                </div>
+        </div>
+        <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div>
+                            <div style="width:110px;float:left;"><b>7. (12.00 pts)</b></div><div style="float:left;"><p>Qualitative Observations</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+                <div class="panel-body">
+                        <div><b>Your Answer: </b><br /><p><br></p><table class="table table-bordered"><tbody><tr><td><br></td><td><br></td><td>before</td><td>during</td><td>after</td></tr><tr><td>procedure</td><td><br></td><td>The string that was given was frayed on the ends and was inconsistent in width. This made the wave fall fast on one side while slower on the other. This decreased our DV's.</td><td>While we were doing the 2nd IV's 3rd trial, a large portion of frayed string fell off making it lighter. This made the DV increase a bit.</td><td>When the on the last trial for the 3rd IV the string's end was extremely frayed making the DV increase as it had lost a lot of its weight.</td></tr><tr><td>results</td><td><br></td><td><br></td><td>The timer was slow when we tried to press it. It sometimes got a little bit stuck when we started and stopped it, which may have affected our DV a little</td><td>As the IV increased, the DV also increased</td></tr></tbody></table></div>
+                        <div class="text-warning"><b>Expected Answer: </b><br /></div>
+                        <br /><span class="text-warning"><span class='glyphicon glyphicon-adjust text-success'></span> &nbsp; Awarded points: 11.00<br /></span>
+                </div>
+        </div>
+        <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div>
+                            <div style="width:250px;float:left;"><b>8. (8.00 pts, <span style="background-color: lightyellow; color:green;">Tiebreaker order: 4</span></b>)</div><div style="float:left;"><p>Quantitative Data</p><p><a href="https://forms.gle/4ibMgGx9emcngZ696" target="_blank">Link to the form</a> for submissions (if written on paper)</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+                <div class="panel-body">
+                        <div><b>Your Answer: </b><br /><p><br></p><table class="table table-bordered"><tbody><tr><td><br></td><td>trial 1</td><td>trial 2</td><td>trial 3</td></tr><tr><td>2 inches&nbsp;</td><td>2 seconds</td><td>2.1 seconds</td><td>2.2 seconds</td></tr><tr><td>4 inches</td><td>1.9 seconds</td><td>1.8 seconds</td><td>2 seconds</td></tr><tr><td>6 inches</td><td>1.5 seconds</td><td>1.7 seconds</td><td>1.6 seconds</td></tr></tbody></table><p><br></p><table class="table table-bordered"><tbody><tr><td><br></td><td>mean</td><td>sample calculations</td></tr><tr><td>2 cm</td><td>2.1 seconds</td><td>(2+2.1+2.2)/3 = 2.1</td></tr><tr><td>4 cm</td><td>1.9 seconds</td><td>(2+1.9+1.8)/3 = 1.9</td></tr><tr><td>6 cm</td><td>1.6 seconds</td><td>(1.5+1.6+1.7)/3 = 1.6</td></tr></tbody></table><p><br></p></div>
+                        <div class="text-warning"><b>Expected Answer: </b><br /></div>
+                        <br /><span class="text-warning"><span class='glyphicon glyphicon-adjust text-success'></span> &nbsp; Awarded points: 7.00<br /></span>
+                </div>
+        </div>
+        <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div>
+                            <div style="width:250px;float:left;"><b>9. (12.00 pts, <span style="background-color: lightyellow; color:green;">Tiebreaker order: 5</span></b>)</div><div style="float:left;"><p>Graph</p><p><a href="https://forms.gle/4ibMgGx9emcngZ696" target="_blank">Link to the form</a> for submissions</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+                <div class="panel-body">
+                        <div><b>Your Answer: </b><br /><p>done</p></div>
+                        <div class="text-warning"><b>Expected Answer: </b><br /></div>
+                        <br /><span class="text-warning"><span class='glyphicon glyphicon-check text-success'></span> &nbsp; Awarded points: 12.00<br /></span>
+                </div>
+        </div>
+        <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div>
+                            <div style="width:110px;float:left;"><b>10. (14.00 pts)</b></div><div style="float:left;"><p>Statistics</p><p><a href="https://forms.gle/4ibMgGx9emcngZ696" target="_blank">Link to the form</a> for submissions (if written on paper)</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+                <div class="panel-body">
+                        <div><b>Your Answer: </b><br /><p>done</p></div>
+                        <div class="text-warning"><b>Expected Answer: </b><br /></div>
+                        <br /><span class="text-warning"><span class='glyphicon glyphicon-check text-success'></span> &nbsp; Awarded points: 14.00<br /></span>
+                </div>
+        </div>
+        <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div>
+                            <div style="width:250px;float:left;"><b>11. (18.00 pts, <span style="background-color: lightyellow; color:green;">Tiebreaker order: 1</span></b>)</div><div style="float:left;"><p>Analysis</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+                <div class="panel-body">
+                        <div><b>Your Answer: </b><br /><p>Variation</p><p>C: They all have the same standard deviation.</p><p>E: They are all 0.08 seconds.</p><p>R: This shows that we conducted our experiment with minimal errors and that we can use the data we collected in the future. Even though the variation was low in each IV, this is still quite concerning, because of the coincidence that all values are exactly 0.1 seconds away from the median. This means that we don't know if any more coincidences happened, making our data questionable.</p><p>Outlier</p><p>C: There were no outliers.</p><p>E: There were no values that were close to being an outlier because each value was exactly 0.1 seconds away from the median</p><p>R: Because there are no outliers, we know that we conducted our experiment with precision and accuracy. This limits the amount of possible random and human errors that happen and therefore helps validate our data. From the fact that there were no outliers, we know our data is accurate and can be used in the future.</p><p>Data Trend</p><p>C: This has a negative trend</p><p>E: As the IV increased, the data values decreased, and this is shown not only by the means but also by the fact that the line of best fit in the graph has a negative slope.</p><p>R: The reason why the time decreased was because the higher the string is, the more force would be acted on by gravity. This is because of higher gravitational potential energy, which increases the downward force that the string is feeling. We predicted this in the hypothesis, therefore supporting the reliability of the experiment even further. The fact that the data trend agreed without hypothesis and data collections&nbsp;</p></div>
+                        <div class="text-warning"><b>Expected Answer: </b><br /></div>
+                        <br /><span class="text-warning"><span class='glyphicon glyphicon-adjust text-success'></span> &nbsp; Awarded points: 17.00<br /></span>
+                </div>
+        </div>
+        <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div>
+                            <div style="width:110px;float:left;"><b>12. (8.00 pts)</b></div><div style="float:left;"><p>Possible Experimental Errors</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+                <div class="panel-body">
+                        <div><b>Your Answer: </b><br /><p>Error 1: The string was frayed (random error) : The string being frayed when we were conducting the experiment made the weight of the string lighter causing it to fall a bit slower and weaker. This increases our DV a bit.</p><p>Error 2: The string was constantly in motion making it hard to measure (Random error) : When it was in motion we usually had to approximate since it was usually below how high it was supposed to be. This increased our DV since it was already closer to the ground.</p></div>
+                        <div class="text-warning"><b>Expected Answer: </b><br /></div>
+                        <br /><span class="text-warning"><span class='glyphicon glyphicon-adjust text-success'></span> &nbsp; Awarded points: 6.00<br /></span>
+                </div>
+        </div>
+        <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div>
+                            <div style="width:110px;float:left;"><b>13. (8.00 pts)</b></div><div style="float:left;"><p>Conclusion</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+                <div class="panel-body">
+                        <div><b>Your Answer: </b><br /><p>Hypothesis Restated: If you increase the height of the string (2, 4, 6 cm), then the time taken for the wave (in seconds) to touch the wall will decrease. This is because when the string is lifted higher and higher, gravity will act on the wave with more force. When height increases, the gravitational potential energy increases and it will travel down the string faster.</p><p>C: The hypothesis was supported.</p><p>E: As the height increased from 2 to 4 to 6 cm, the time decreased from 2.1 seconds to 1.9 seconds to 1.6 seconds.&nbsp;</p><p>R: This is due to the fact that the amplitude and the period have an inverse proportionality, meaning as one increases, the other value decreases. That formula is supported by our experiment, showing that we conducted it with precision and acurracy. This also means that we can use this data in the future.</p></div>
+                        <div class="text-warning"><b>Expected Answer: </b><br /></div>
+                        <br /><span class="text-warning"><span class='glyphicon glyphicon-check text-success'></span> &nbsp; Awarded points: 8.00<br /></span>
+                </div>
+        </div>
+        <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div>
+                            <div style="width:110px;float:left;"><b>14. (9.00 pts)</b></div><div style="float:left;"><p>Recommendations for Future Experimentation</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+                <div class="panel-body">
+                        <div><b>Your Answer: </b><br /><ul><li>One recommendation for this experiment is to increase the consistency of the time and power when the string is lifted. This would make the data more consistent, precise, and accurate, therefore increasing the reliability of the experiment.</li><li>One possible real-life example this experiment can be used in is to measure waves on the shores of islands or coasts. This can be used to predict tsunamis before they happen by measuring the height of the waves making sure they are at a normal height. If the wave is too high, it can send a message to the coast/island to declare a tsunami warning so that everybody is prepared and on safe ground. This will give greater trust in the government and the alarms, possibly saving citizens</li><li>Another experiment that you can do with this prompt and set of materials is to fill the tub with water and create waves with it, and record the time that the water wave takes to reach the other side of the tub</li></ul></div>
+                        <div class="text-warning"><b>Expected Answer: </b><br /></div>
+                        <br /><span class="text-warning"><span class='glyphicon glyphicon-check text-success'></span> &nbsp; Awarded points: 9.00<br /></span>
+                </div>
+        </div>
+            <div class="panel panel-success">
+            <div class="panel-heading"><p><span style="font-size: 18px;">Great job, congrats on completion! </span></p><p>Here's the <span style="background-color: rgb(255, 255, 0);"><a href="https://forms.gle/4ibMgGx9emcngZ696" target="_blank">submission form</a>&nbsp;linked</span> if you haven't submitted your procedure diagrams, data tables, graph, or statistics yet. You get 10 minutes from the time that you finished this test to submit these sections to the form.</p></div>
+        </div>
+</div>
+
+
+        <hr />
+        <div class="row">
+    
+    <div class="col-md-6 text-left"><a href="https://scilympiad.com" target="_blank">&copy; 2024 - powered by Scilympiad</a> | <a href='/birdso/Home/Subscribers?sort=t' target="_blank">Tournaments</a> | <a href='/birdso/Give'>Support Us</a></div>
+    <div class="col-md-6 text-right">
+        <a href='/ToS.html' target="_blank">Terms of Use</a> | <a href='/Privacy.html' target="_blank">Privacy</a> | <a href='/CookiePolicy.html' target="_blank">Cookie Policy</a> | <a href='/birdso/Support' target="_blank">Support</a> | <a href="/birdso/Home/Contact">Contact</a>
+    </div>
+</div>
+
+    </div>
+    <script src="/bundles/bootstrap?v=2Fz3B0iizV2NnnamQFrx-NbYJNTFeBJ2GM05SilbtQU1"></script>
+
+    
+</body>
+</html>
